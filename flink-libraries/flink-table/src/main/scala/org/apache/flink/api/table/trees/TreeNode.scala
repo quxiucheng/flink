@@ -21,22 +21,26 @@ import org.apache.commons.lang.ClassUtils
 
 /**
  * Generic base class for trees that can be transformed and traversed.
+  * 可转换和遍历的树的泛型基类。
  */
 abstract class TreeNode[A <: TreeNode[A]] extends Product { self: A =>
 
   /**
    * List of child nodes that should be considered when doing transformations. Other values
    * in the Product will not be transformed, only handed through.
+   * 执行转换时应考虑的子节点列表。产品中的其他值不会被转换，只会被传递。
    */
   private[flink] def children: Seq[A]
 
   /**
    * Tests for equality by first testing for reference equality.
+    * 通过首先测试引用相等性来测试相等性。
    */
   private[flink] def fastEquals(other: TreeNode[_]): Boolean = this.eq(other) || this == other
 
   /**
     * Do tree transformation in post order.
+    * 按后序进行树变换。
     */
   private[flink] def postOrderTransform(rule: PartialFunction[A, A]): A = {
     def childrenTransform(rule: PartialFunction[A, A]): A = {
@@ -86,6 +90,8 @@ abstract class TreeNode[A <: TreeNode[A]] extends Product { self: A =>
   /**
    * Creates a new copy of this expression with new children. This is used during transformation
    * if children change.
+    *
+    * 使用新子元素创建此表达式的新副本。如果子元素发生变化，则在转换期间使用。
    */
   private[flink] def makeCopy(newArgs: Array[AnyRef]): A = {
     val ctors = getClass.getConstructors.filter(_.getParameterTypes.size > 0)
