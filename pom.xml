@@ -53,27 +53,18 @@ under the License.
 		<!-- Dummy module to force execution of the Maven Shade plugin (see Shade plugin below) -->
 		<module>tools/force-shading</module>
 		<module>flink-annotations</module>
-		<module>flink-shaded-curator</module>
 		<module>flink-core</module>
 		<module>flink-java</module>
-		<module>flink-scala</module>
 		<module>flink-filesystems</module>
 		<module>flink-runtime</module>
-		<!--<module>flink-runtime-web</module>-->
 		<module>flink-optimizer</module>
 		<module>flink-streaming-java</module>
-		<module>flink-streaming-scala</module>
-		<module>flink-connectors</module>
 		<module>flink-formats</module>
 		<module>flink-clients</module>
-		<module>flink-container</module>
 		<module>flink-state-backends</module>
-		<module>flink-libraries</module>
-		<module>flink-dist</module>
 		<module>flink-mesos</module>
 		<module>flink-metrics</module>
-		<module>flink-yarn</module>
-		<module>flink-ml-parent</module>
+		<module>example</module>
 	</modules>
 
 	<properties>
@@ -638,9 +629,6 @@ under the License.
 			</activation>
 			<!-- Scala Shell doesn't currently work with Scala 2.12 so only include
 			when building for Scala 2.11. -->
-			<modules>
-				<module>flink-scala-shell</module>
-			</modules>
 			<build>
 				<plugins>
 					<!-- make sure we don't have any _2.10 or _2.12 dependencies when building
