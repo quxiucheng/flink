@@ -33,7 +33,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/** The direct executor service directly executes the runnables and the callables in the calling thread. */
+/** The direct executor service directly executes the runnables and the callables in the calling thread.
+ * 直接执行程序服务直接执行调用线程中的runnables和callables
+ * */
 class DirectExecutorService implements ExecutorService {
 	static final DirectExecutorService INSTANCE = new DirectExecutorService();
 

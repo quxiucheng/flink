@@ -187,6 +187,7 @@ public class SourceStreamTask<OUT, SRC extends SourceFunction<OUT>, OP extends S
 
 	/**
 	 * Runnable that executes the the source function in the head operator.
+	 * Runnable执行head运算符中的source函数
 	 */
 	private class LegacySourceFunctionThread extends Thread {
 

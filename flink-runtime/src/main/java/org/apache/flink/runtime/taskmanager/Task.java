@@ -523,6 +523,7 @@ public class Task implements Runnable, TaskActions, PartitionProducerStateProvid
 
 	/**
 	 * The core work method that bootstraps the task and executes its code.
+	 * 引导任务并执行其代码的核心工作方法。
 	 */
 	@Override
 	public void run() {

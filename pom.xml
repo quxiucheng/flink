@@ -59,32 +59,20 @@ under the License.
 		<module>flink-scala</module>
 		<module>flink-filesystems</module>
 		<module>flink-runtime</module>
-		<module>flink-runtime-web</module>
+		<!--<module>flink-runtime-web</module>-->
 		<module>flink-optimizer</module>
 		<module>flink-streaming-java</module>
 		<module>flink-streaming-scala</module>
 		<module>flink-connectors</module>
 		<module>flink-formats</module>
-		<module>flink-examples</module>
 		<module>flink-clients</module>
 		<module>flink-container</module>
-		<module>flink-queryable-state</module>
-		<module>flink-tests</module>
-		<module>flink-end-to-end-tests</module>
-		<module>flink-test-utils-parent</module>
 		<module>flink-state-backends</module>
 		<module>flink-libraries</module>
-		<module>flink-table</module>
-		<module>flink-quickstart</module>
-		<module>flink-contrib</module>
 		<module>flink-dist</module>
 		<module>flink-mesos</module>
 		<module>flink-metrics</module>
 		<module>flink-yarn</module>
-		<module>flink-yarn-tests</module>
-		<module>flink-fs-tests</module>
-		<module>flink-docs</module>
-		<module>flink-python</module>
 		<module>flink-ml-parent</module>
 	</modules>
 
@@ -830,13 +818,7 @@ under the License.
 								<skip>true</skip>
 							</configuration>
 						</plugin>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-checkstyle-plugin</artifactId>
-							<configuration>
-								<skip>true</skip>
-							</configuration>
-						</plugin>
+
 						<plugin>
 							<groupId>org.scalastyle</groupId>
 							<artifactId>scalastyle-maven-plugin</artifactId>
@@ -1401,10 +1383,7 @@ under the License.
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -1608,35 +1587,6 @@ under the License.
 					</configuration>
 				</plugin>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>2.17</version>
-					<dependencies>
-						<dependency>
-							<groupId>com.puppycrawl.tools</groupId>
-							<artifactId>checkstyle</artifactId>
-							<!-- Note: match version with docs/flinkDev/ide_setup.md -->
-							<version>8.14</version>
-						</dependency>
-					</dependencies>
-					<executions>
-						<execution>
-							<id>validate</id>
-							<phase>validate</phase>
-							<goals>
-								<goal>check</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<suppressionsLocation>/tools/maven/suppressions.xml</suppressionsLocation>
-						<includeTestSourceDirectory>true</includeTestSourceDirectory>
-						<configLocation>/tools/maven/checkstyle.xml</configLocation>
-						<logViolationsToConsole>true</logViolationsToConsole>
-						<failOnViolation>true</failOnViolation>
-					</configuration>
-				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -1698,14 +1648,6 @@ under the License.
 									</action>
 								</pluginExecution>
 								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.apache.maven.plugins</groupId>
-										<artifactId>maven-checkstyle-plugin</artifactId>
-										<versionRange>[2.12.1,)</versionRange>
-										<goals>
-											<goal>check</goal>
-										</goals>
-									</pluginExecutionFilter>
 									<action>
 										<ignore />
 									</action>
@@ -1753,17 +1695,6 @@ under the License.
 							</goals>
 						</execution>
 					</executions>
-					<configuration>
-						<verbose>false</verbose>
-						<failOnViolation>true</failOnViolation>
-						<includeTestSourceDirectory>true</includeTestSourceDirectory>
-						<failOnWarning>false</failOnWarning>
-						<sourceDirectory>${basedir}/src/main/scala</sourceDirectory>
-						<testSourceDirectory>${basedir}/src/test/scala</testSourceDirectory>
-						<outputFile>${project.basedir}/target/scalastyle-output.xml</outputFile>
-						<inputEncoding>UTF-8</inputEncoding>
-						<outputEncoding>UTF-8</outputEncoding>
-					</configuration>
 				</plugin>
 
 				<!-- set scala maven plugin version -->

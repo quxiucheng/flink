@@ -25,6 +25,7 @@ import java.lang.annotation.Target;
 
 /**
  * Annotation for marking classes as public, stable interfaces.
+ * 用于将类标记为公共的、稳定的接口的注释。
  *
  * <p>Classes, methods and fields with this annotation are stable across minor releases (1.0, 1.1, 1.2). In other words,
  * applications using @Public annotated classes will compile against newer versions of the same major release.

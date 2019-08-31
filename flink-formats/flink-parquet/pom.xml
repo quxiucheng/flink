@@ -143,24 +143,6 @@ under the License.
 
 	<build>
 		<plugins>
-			<!-- Generate Test class from avro schema -->
-			<plugin>
-				<groupId>org.apache.avro</groupId>
-				<artifactId>avro-maven-plugin</artifactId>
-				<version>${avro.version}</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>schema</goal>
-						</goals>
-						<configuration>
-							<testSourceDirectory>${project.basedir}/src/test/resources/avro</testSourceDirectory>
-							<testOutputDirectory>${project.basedir}/src/test/java/</testOutputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 
 			<!-- skip dependency convergence due to Hadoop dependency -->
 			<plugin>
