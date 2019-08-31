@@ -56,12 +56,6 @@ under the License.
 			<artifactId>jsr305</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Base testing tools -->
-		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-test-utils-junit</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>

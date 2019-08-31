@@ -66,12 +66,7 @@ under the License.
 			<artifactId>flink-shaded-jackson</artifactId>
 		</dependency>
 
-		<!-- test dependencies -->
 
-		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-test-utils-junit</artifactId>
-		</dependency>
 	</dependencies>
 
 	<!-- Because flink-tests needs the CompilerTestBsae -->

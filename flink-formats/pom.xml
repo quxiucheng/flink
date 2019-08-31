@@ -49,12 +49,6 @@ under the License.
 			<artifactId>slf4j-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-test-utils-junit</artifactId>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
 </project>

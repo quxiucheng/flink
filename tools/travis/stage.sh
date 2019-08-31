@@ -30,7 +30,6 @@ STAGE_CLEANUP="cleanup"
 
 MODULES_CORE="\
 flink-annotations,\
-flink-test-utils-parent/flink-test-utils,\
 flink-state-backends/flink-statebackend-rocksdb,\
 flink-clients,\
 flink-core,\
